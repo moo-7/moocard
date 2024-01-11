@@ -130,8 +130,8 @@ class moocard {
 
             return canvas.toBuffer('image/png');
         } catch (error) {
-            console.error("Error while building moocard");
-            throw error;
+            console.log("Error while building moocard, thumbnail not supported");
+            throw null;    
         }
     }
 }

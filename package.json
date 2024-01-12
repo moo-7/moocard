@@ -11,7 +11,7 @@
     "build",
     "res"
   ],
-  "author": "Arrastão RJ",
+  "author": "madebytragic (https://github.com/lrmn7)",
   "license": "ISC",
   "dependencies": {
     "canvas": "^2.11.2",

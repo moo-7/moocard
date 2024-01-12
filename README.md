@@ -1,31 +1,29 @@
-# __Sobre__
-**Musicard** é uma biblioteca futurística de cartões de música projetada para bots Discord.
+# Moocard is a futuristic music card library designed for Discord bots.
 
-# __Instalação__
+# install
 ```
 npm install moocard
 ```
 
-# __Exemplo__
-Este código de exemplo irá gerar uma imagem de cartão de música e salvá-la.
+# example
 ```js
 
-  const { moocard } = require("moocard");
+    const card = new moocard()
+      .setName(String(song?.title).toUpperCase())
+      .setAuthor(String(song?.author).toUpperCase())
+      .setColor(client.color.toString())
+      .setThumbnail(
+        track.thumbnail
+          ? track.thumbnail
+          : `https://img.youtube.com/vi/${track.identifier}/hqdefault.jpg`
+      )
+      .setRequester((song?.requester as User).username.toUpperCase());
 
-  const card = new moocard()
-        .setName(track.info.title)
-        .setAuthor(track.info.author)
-        .setColor("auto")
-        .setThumbnail(track.info.thumbnail)
-        .setProgress(10)
-        .setStartTime("00:00")
-        .setEndTime(formattedLength)
+    const cardBuffer = await card.build();
 
-    const buffer = await card.build()
-    const attachment = new AttachmentBuilder(buffer, { name: `musicard.png` })
+    const attachment = new AttachmentBuilder(cardBuffer, {
+      name: "moo.png",
+    });
 ```
 
-# __Saída__
-Esta é a saída **clássica** do musicard.
-
-![classic](https://raw.githubusercontent.com/arrastaorj/flags/main/musicard%20(3).png)
+![classic](https://cdn.discordapp.com/attachments/1194410866209206412/1195031997320540320/mewwme.png)
